@@ -10,8 +10,16 @@ namespace LineComparisonProblem
     {
         static void Main(string[] args)
         {
-            LineComparison compare = new LineComparison(15, 24, 17, 8);
-            compare.CompareTwoLines();
+            LineComparison lineOne = new LineComparison(15, 14, 17, 8);
+            double lineLengthOne = lineOne.CompareTwoLines();
+            Console.WriteLine($"Length of the line one : {lineLengthOne}");
+            LineComparison lineTwo = new LineComparison(25, 3, 15, 21);
+            double lineLengthTwo = lineTwo.CompareTwoLines();
+            Console.WriteLine($"Length of the line two : {lineLengthTwo}");
+            if(lineLengthOne.Equals(lineLengthTwo))
+                Console.WriteLine("Both lines are equal");
+            else
+                Console.WriteLine("Both lines are unequal");
             Console.ReadKey();
         }
     }
